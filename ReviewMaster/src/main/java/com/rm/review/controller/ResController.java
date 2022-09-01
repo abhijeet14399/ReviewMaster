@@ -32,6 +32,7 @@ public class ResController {
 	public String addRestaurent( @RequestBody ResDto rdto, BindingResult br) {
 		System.out.println(rdto);
 		String str = add.addRes(rdto);
+		System.out.println("hello");
 		return str;
 
 	}
