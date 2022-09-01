@@ -2,8 +2,6 @@ package com.rm.review.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +29,7 @@ public class ResController {
 	AddService add;
 	
 	@PostMapping("/add")
-	public String addRestaurent(@Valid @RequestBody ResDto rdto, BindingResult br) {
+	public String addRestaurent( @RequestBody ResDto rdto, BindingResult br) {
 		System.out.println(rdto);
 		String str = add.addRes(rdto);
 		return str;
@@ -39,7 +37,7 @@ public class ResController {
 	}
 	
 	@PostMapping("/addRev")  //Adding the review 
-	public String addRestaurent(@Valid @RequestBody RevDto rdto, BindingResult br) {
+	public String addRestaurent( @RequestBody RevDto rdto, BindingResult br) {
 		System.out.println(rdto);
 		String str = add.addRev(rdto);
 		return str;
